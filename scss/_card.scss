@@ -1,0 +1,55 @@
+.card {
+  aspect-ratio: 1 / 1.5;
+
+  @media (min-width: 60em) {
+    &--featured {
+      grid-row: span 2;
+      grid-column: span 2;
+
+      & .card__img {
+        aspect-ratio: 1 / 1.25;
+      }
+
+      & .card__title {
+        font-size: 4.5rem;
+      }
+    }
+  }
+
+  &--stacked {
+    display: grid;
+
+    & > * {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    aspect-ratio: 1 / 1.25;
+    object-fit: cover;
+
+    @media (min-width: 60em) {
+      aspect-ratio: 1 / 1;
+    }
+  }
+
+  &__content {
+    background-color: white;
+    align-self: end;
+    padding: 1rem;
+    margin: 1rem 1rem 4rem;
+    box-shadow: 0 4px 16px rgb(0 0 0 / 0.1);
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    line-height: 1.1;
+    color: firebrick;
+  }
+
+  &__price {
+    font-size: 2rem;
+  }
+}
